@@ -1,47 +1,15 @@
-## 定义和初始化内置数组
-
-数组定义时**维度必须是一个常量表达式**
+### 删除第一个字符
 
 ```c++
-unsigned cnt = 42; //不是一个常量表达式，没有用const修饰
-constexpr unsigned sz = 32; //常量表达式
+string digits = "jkasdf";
+digits.erase(digits.beign());
 ```
 
-**常量表达式**是指不会改变并在编译过程就能够得到计算结果的表达式。显然字面值属于常量表达式，**常量表达式初始化的const对象也是常量表达式**
+#### 获取子字符串
 
 ```c++
-const int max_num = 20;
-```
+digits.substr(0,index); //1到index
 
-
-
-### 初始化数组
-
-```c++
-const unsigned sz = 3;
-int a1[sz] = {0,1,2};
-int a2[] = {1,2,3};
-```
-
-定义存放指针的数组
-
-```c++
-int *ptrs[10]; //ptrs是包含有10个整型指针的数组	
-int (*Parray)[10] = &arr; // Parray指向一个含有10个整数的数组
-int (&arrRef)[10] = arr; //arrRef引用一个含有10个整数的数组
-int *(&arry)[10] = ptrs; //arry是数组的引用，该数组含有10个指针
-```
-
-#### 字符大小写转换
-
-```c++
-toupper(char);
-tolower(char);
-```
-
-#### 判断字符是否是标点符号
-
-```c++
-int ispunct(char ch); //为标点为非零值，否则为零
+digits.substr(1); // 截取位置1到末尾
 ```
 
